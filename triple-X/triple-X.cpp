@@ -4,7 +4,7 @@
 #include <iostream>
 #include <ctime>
 
-void playGameAtDifficulty(int difficulty) {
+bool playGameAtDifficulty(int difficulty) {
     std::cout << "You run to door number " << difficulty << " with a three digit locker\n";
     std::cout << "On the doors are also written the following instructions:\n";
 
@@ -26,7 +26,22 @@ void playGameAtDifficulty(int difficulty) {
     std::cout << "Enter the three numbers followed by x\n";
     std::cout << std::endl;
     
-    int answer;
+    int answerA, answerB, answerC;
+    std::cin >> answerA >> answerB >> answerC;
+
+    int GuessSum = answerA + answerB + answerC;
+    int GuessProduct = answerA * answerB * answerC;
+
+    if (GuessSum == sum && GuessProduct == product)
+    {
+        std::cout << "\nYou entered correct numbers!\n";
+        return true;
+    }
+    else
+    {
+        std::cout << "\nYou lost! :(((\n";
+        return false;
+    }
 }
 
 int main()
