@@ -56,15 +56,22 @@ int main()
     std::cout << "Unnaturally long legs covered with fur\n";
     std::cout << "And this creature creature has just begun to approach you!!!\n";
 
-    int difficulty = 2;
+    int difficulty = 1;
     int maxDifficulty = 10;
 
     while (difficulty <= maxDifficulty)
     {
-        playGameAtDifficulty(difficulty);
+        bool IsCompleted = playGameAtDifficulty(difficulty);
         std::cin.clear();
         std::cin.ignore();
-        difficulty++;
+        if (IsCompleted)
+        {
+            difficulty++;
+        }
+        else
+        {
+            difficulty == 100;
+        }
     }
 
     std::cout << "YOU ESCAPED !!! Congratulations !!!\n";
